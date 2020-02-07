@@ -18,3 +18,37 @@ int main()
 }
 
 //Write definition of stat() here 
+void stat(const double A[],int N,double B[]){
+  double sum = 0;
+  double max = A[0]; 
+  double min = A[0];
+  double psum = 0;
+  double mean = 0;
+for (int i=0; i<N; i++) {
+        psum = psum + pow(A[i],2);;
+       
+    }
+
+for (int i=0; i<N; i++) {
+       sum += A[i]; 
+       B[0] = sum/N;
+    }
+
+for (int i = 0; i < N; i++)
+    {
+      if (A[i] > max){
+          max = A[i];
+        }else if (A[i] < min){
+          min = A[i];
+        }
+    }
+    B[2] = max;
+    B[3] = min;
+
+    mean = sum/N;
+
+    B[1] = sqrt((psum/N)-pow(mean,2));
+
+
+
+}
